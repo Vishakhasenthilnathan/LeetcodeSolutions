@@ -5,14 +5,11 @@ class Solution {
         int w = m+n-1;
         while(r>=0){
           if(l>=0 && nums1[l]>nums2[r]){
-            nums1[w] = nums1[l];
-            l--;
+            nums1[w--] = nums1[l--];
           }
           else{
-            nums1[w] = nums2[r];
-            r--;
+            nums1[w--] = nums2[r--];
           }
-          w--;
         }
     }
 }
