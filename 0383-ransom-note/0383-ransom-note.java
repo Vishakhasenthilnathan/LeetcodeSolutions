@@ -12,8 +12,9 @@ class Solution {
         }
 
         for(var ran : ransomNote.toCharArray()){
-            if(magazineMap.getOrDefault(ran,0)>0){
-                magazineMap.put(ran,magazineMap.get(ran)-1);
+            var val = magazineMap.getOrDefault(ran,0);
+            if(val>0){
+                magazineMap.put(ran,val-1);
             }
             else{
                 return false;
