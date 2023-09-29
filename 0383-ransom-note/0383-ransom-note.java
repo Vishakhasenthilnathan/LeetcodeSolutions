@@ -3,7 +3,12 @@ class Solution {
         HashMap<Character,Integer> magazineMap = new HashMap<>();
         for(var mag : magazine.toCharArray()){
             int val = magazineMap.getOrDefault(mag,0);
-            magazineMap.put(mag,val+1);
+            if(val == 0){
+                magazineMap.put(mag,1);
+            }
+            else{
+                magazineMap.put(mag,val+1);
+            }
         }
 
         for(var ran : ransomNote.toCharArray()){
