@@ -1,13 +1,11 @@
 class Solution {
     public int removeDuplicates(int[] nums) {
-        int reader =0; int writer =0;
-        HashSet<Integer> uniqueVal = new HashSet<>();
-        while(reader < nums.length){
-            if(uniqueVal.contains(nums[reader])){
+        int reader = 1; int writer = 1;
+        while(reader<nums.length){
+            if(nums[reader]== nums[reader-1]){
                 reader++;
             }
             else{
-                uniqueVal.add(nums[reader]);
                 nums[writer++] = nums[reader++];
             }
         }
