@@ -1,25 +1,43 @@
 class Solution {
     public int romanToInt(String s) {
-        HashMap<Character,Integer> romanToValueMap = new HashMap<Character,Integer>();
-        romanToValueMap.put('I',1);
-        romanToValueMap.put('V',5);
-        romanToValueMap.put('X',10);
-        romanToValueMap.put('L',50);
-        romanToValueMap.put('C',100);
-        romanToValueMap.put('D',500);
-        romanToValueMap.put('M',1000);
-
         char[] charArr = s.toCharArray();
         int integerValue = 0;
+        int currVal = 0;
+        int prevValue =0;
+        
         for(int i=0;i<s.length();i++){
-            var currentValue = romanToValueMap.get(charArr[i]);
-            var prevValue = i==0 ? 0 : romanToValueMap.get(charArr[i-1]);
-            if(prevValue < currentValue){
-                integerValue = integerValue - prevValue + (currentValue - prevValue);
+            switch(s.charAt(i)) {
+                case 'I' :
+                    currVal = 1;
+                    break;
+                case 'V' :
+                    currVal = 5;
+                    break;
+                case 'X' :
+                    currVal = 10;
+                    break;
+                case 'L' :
+                    currVal = 50;
+                    break;
+                case 'C' :
+                    currVal = 100;
+                    break;
+                case 'D' :
+                    currVal = 500;
+                    break;
+                case 'M' :
+                    currVal = 1000;
+                    break;
+            }
+
+
+            if(prevValue < currVal){
+                integerValue = integerValue - prevValue + (currVal - prevValue);
             }
             else{
-                integerValue += currentValue;
+                integerValue += currVal;
             }
+            prevValue = currVal;
         }
         return integerValue;
     }
