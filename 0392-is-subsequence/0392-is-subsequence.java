@@ -4,8 +4,8 @@ class Solution {
         int tp = 0;
         int slength = s.length();
         int tlength = t.length();
-        while(tp<tlength){
-            if(sp< slength && s.charAt(sp) == t.charAt(tp)){
+        while(tp<tlength && sp<slength){
+            if(s.charAt(sp) == t.charAt(tp)){
                 tp++;
                 sp++;
             }
