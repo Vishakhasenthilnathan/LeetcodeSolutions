@@ -1,5 +1,6 @@
 class Solution {
     public int removeDuplicates(int[] nums) {
+        /*
         int writer=0,reader=0;
         HashMap<Integer,Integer> freqMap = new HashMap<>();
         while(reader<nums.length){
@@ -10,6 +11,29 @@ class Solution {
             else{
                 freqMap.put(nums[reader], valueInMap+1);
                 nums[writer++] = nums[reader++];
+            }
+        }
+        return writer;
+        */
+        
+        //Without extra space
+        int writer=0,reader=0;
+        for(int i=0;i<nums.length;i++){
+            int val = nums[i];
+            int count =0;
+            while(reader < nums.length && val==nums[reader]){
+                reader++;
+                count++;
+                // System.out.println("val "+ val+ " reader "+reader+ " count " + count + "nums[reader] "+ nums[reader]);
+
+            }
+
+            if(count>2){
+                count = 2;
+            }
+
+            for(int j=0;j<count;j++){
+                nums[writer++] = val;
             }
         }
         return writer;
