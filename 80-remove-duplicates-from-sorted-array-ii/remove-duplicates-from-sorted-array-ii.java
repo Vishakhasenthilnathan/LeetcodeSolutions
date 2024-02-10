@@ -24,8 +24,6 @@ class Solution {
             while(reader < nums.length && val==nums[reader]){
                 reader++;
                 count++;
-                // System.out.println("val "+ val+ " reader "+reader+ " count " + count + "nums[reader] "+ nums[reader]);
-
             }
 
             if(count>2){
