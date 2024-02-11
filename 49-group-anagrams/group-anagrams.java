@@ -9,9 +9,7 @@ class Solution {
                 map.put(key,new ArrayList<String>(Arrays.asList(str)));
             }
             else{
-                // List<String> anagramList = ;
                 map.get(key).add(str);
-                // map.put(key,anagramList);
             }
         }
         List<List<String>> anagramListOfLists = new ArrayList<List<String>>();
