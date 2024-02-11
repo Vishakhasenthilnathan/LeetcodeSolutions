@@ -5,9 +5,9 @@ class Solution {
             char[] keyArr = str.toCharArray(); 
             Arrays.sort(keyArr);
             String key = String.valueOf(keyArr);
-                map.putIfAbsent(key,new ArrayList<String>());
-                map.get(key).add(str);
-        
+            
+            map.putIfAbsent(key,new ArrayList<String>());
+            map.get(key).add(str);
         }
         return new ArrayList<>(map.values());
     }
