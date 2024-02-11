@@ -4,13 +4,10 @@ class Solution {
         for(String str: strs){
             char[] keyArr = str.toCharArray(); 
             Arrays.sort(keyArr);
-            String key = new String(keyArr);
-            if(!map.containsKey(key)){
-                map.put(key,new ArrayList<String>(Arrays.asList(str)));
-            }
-            else{
+            String key = String.valueOf(keyArr);
+                map.putIfAbsent(key,new ArrayList<String>());
                 map.get(key).add(str);
-            }
+        
         }
         List<List<String>> anagramListOfLists = new ArrayList<List<String>>();
         for(String key: map.keySet()){
