@@ -9,13 +9,6 @@ class Solution {
                 map.get(key).add(str);
         
         }
-        List<List<String>> anagramListOfLists = new ArrayList<List<String>>();
-        for(String key: map.keySet()){
-            List<String> values = map.get(key);
-            if(values.size()>0){
-                anagramListOfLists.add(values);
-            }
-        }
-        return anagramListOfLists;
+        return new ArrayList<>(map.values());
     }
 }
