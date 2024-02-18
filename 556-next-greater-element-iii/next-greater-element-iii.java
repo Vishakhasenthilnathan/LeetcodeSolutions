@@ -4,10 +4,6 @@ class Solution {
         //find the next larger number than dip
         //swap
         //reverse the numbers from dip to end
-
-        if(!(n>=Integer.MIN_VALUE && n<=Integer.MAX_VALUE)){
-            return -1;
-        }
         char[] arr = Integer.toString(n).toCharArray();
         int end = arr.length-1;
         int dip = -1;
