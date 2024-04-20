@@ -11,25 +11,11 @@ class Solution {
        int answ= 0;
         while(beg<end){
             mid = (beg+end)/2;
-            System.out.println("mid=" +mid);
-
             if(numberOfHoursAsPerSpeed(mid,piles)<=h){
-                System.out.println("numberOfHoursAsPerSpeed(mid,piles)= h : " +numberOfHoursAsPerSpeed(mid,piles));
-                // answ = mid;
                 end = mid;
-                // System.out.println("numberOfHoursAsPerSpeed(mid,piles)= h : end = " +end);
             }
-            // else if(numberOfHoursAsPerSpeed(mid,piles)<h){
-            //     System.out.println("numberOfHoursAsPerSpeed(mid,piles)< h : " +numberOfHoursAsPerSpeed(mid,piles));
-            //     //speed can be reduced
-            //     end = mid-1;
-            //     System.out.println("numberOfHoursAsPerSpeed(mid,piles)< h : end = " +end);
-            // }
             else{
-                System.out.println("numberOfHoursAsPerSpeed(mid,piles)> h : " +numberOfHoursAsPerSpeed(mid,piles));
                 beg = mid+1;
-                System.out.println("numberOfHoursAsPerSpeed(mid,piles)> h : beg = " +beg);
-
             }
         }
         return end;
