@@ -5,6 +5,9 @@ class Solution {
         int min = 0;
         while(beg<=end){
             int mid = (beg+end)/2;
+            if(nums[beg]<nums[end]){
+                return nums[beg];
+            }
             if(nums[beg] <= nums[mid] && nums[beg] <= nums[end]){
                 if(nums[mid]<nums[beg]){
                     min = nums[mid];
