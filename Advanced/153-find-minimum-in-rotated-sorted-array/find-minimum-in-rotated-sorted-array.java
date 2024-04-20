@@ -10,7 +10,7 @@ class Solution {
                 break;
             }
             if(nums[beg] <= nums[mid]){
-                min = Math.min(min,nums[beg]);
+                min = Math.min(nums[mid],nums[beg]);
                 beg = mid+1;
             }
             else{
