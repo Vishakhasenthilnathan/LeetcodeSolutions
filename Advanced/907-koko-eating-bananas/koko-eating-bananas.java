@@ -7,10 +7,8 @@ class Solution {
         int beg = 1;
         int end = maxValueInPile;
         //after getting the max, apply binary search such that the sum of the time got from the speed is equal to k
-       int mid =0;
-       int answ= 0;
         while(beg<end){
-            mid = (beg+end)/2;
+            int mid = (beg+end)/2;
             if(numberOfHoursAsPerSpeed(mid,piles)<=h){
                 end = mid;
             }
